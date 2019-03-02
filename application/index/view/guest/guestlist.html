@@ -1,0 +1,125 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="keywords" content="用线" />
+  <meta name="description" content="用线条创作的微型雕塑 令人惊叹不已 " />
+  <title>读者留言</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="__INDEX__/img/yteng.jpg" />
+  <link rel="stylesheet" type="text/css" media="all" href="__INDEX__/css/style.css" />
+  <link rel="stylesheet" type="text/css"  href="__INDEX__/css/font-awesome.min.css"/>
+  <script type="text/javascript" src="__INDEX__/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__INDEX__/js/responsiveslides.min.js"></script>
+  <script type="text/javascript" src="__INDEX__/js/yycm.js"></script>
+
+  <body>
+
+    <!--引入首页-->
+    {include file="common/header" /}
+
+    <div class="wrap" >
+      <div class="main">
+        <div class="article">
+          <div class="map">
+            <span> 当前位置&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">首页</a>&nbsp;>&nbsp;
+              <a href=""> 留言板 &nbsp;>&nbsp;</a>正文 </span>
+            </div>
+            <div class="title">
+              <h1>  </h1>
+              <div class="subtitle"> 
+
+              </div>
+            </div>
+            <div class="subblock">
+              <script src=/d/js/acmsd/thea6.js></script>
+            </div>
+
+            <div id="article">
+              {volist name="guestres" id="guestres"}
+              <li>
+                <div>
+                  <img class="avatar" src="http://cn.gravatar.com/avatar/75e215cea7a9364665ca688b5a23a58a?s=40&d=mm" alt="" width="32" /> 
+                  <strong>{$guestres.nickname}</strong>
+                </div>
+                <div style="color: gray;">
+                  <small> 发布于 {$guestres.guest_time}  
+                  </div>
+                  <div style="color: orange;font-style: italic;font-weight: bold;">{$guestres.content}</div>
+                </li>
+                
+                {if condition ="$guestres['reply']"}
+                  <p>
+                  <label for="inpName">作者回复：</label>
+                  <label for="reply">{$guestres.reply}</label>
+                 </p>
+                 <br/>
+                 {else/}
+                 <p>
+                   <label for="inpName">作者回复：</label>
+                  <label for="inpName">暂无</label>
+                 </p>
+                 <br/>
+                 {/if}
+
+                {/volist}
+
+              </div>
+              　　
+
+
+
+              <div class='pagination'></div>
+              <div class="subblock">
+                <script src=/d/js/acmsd/thea8.js></script>
+              </div>
+
+
+              <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","tsina","bdysc","weixin","renren","tqq","tieba","douban","bdhome","sqq","mail","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> 
+            </div>
+            <div class="clear"></div>
+            <div class="con_pretext">
+
+            </ul>
+          </div>
+          <div class="clear"></div>
+          <div class="submain">
+            <div class="map">
+              <h3></h3>
+            </div>
+            <ul class="related_img">
+            </ul>
+          </div>
+          <div class="clear"></div>
+          <div class="submain">
+            <div class="map">
+                <strong> <a href="{:url('Guest/add')}">我要留言</a>  </strong> 
+           </div>
+            <div class="comments" id="comments">
+              <div class="ds-thread" data-category="1" data-thread-key="98" data-title="用线条创作的微型雕塑 令人惊叹不已"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="clear"></div>
+
+
+      <!--引入尾页-->
+      {include file="common/footer" /}
+
+      <script type="text/javascript">
+        var duoshuoQuery = {short_name:"ecms064"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+           || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      </script>
+    </body>
+    </html>

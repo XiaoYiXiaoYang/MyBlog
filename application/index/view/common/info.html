@@ -1,0 +1,46 @@
+<div class="sider">
+  <div class="right">
+    <div class="author">
+      <div class="topauthor"> <img alt="" src="__INDEX__/img/yteng.jpg" class="avatar avatar-100 photo" height="100" width="100"> <span class="intag">作者</span><span class="names">萧逸小杨</span></br>
+        <span class="talk"> 计算机专业，熟悉C/C++语言，了解Java PHP SQL  Python 汇编语言等</span>
+      </div>
+      <span class="bot"></span>
+    </div>
+    <div class="butauthor author">
+      <li> <span class="bignum"> 000 </span>文章总数 </li>
+      <li> <span class="bignum">000</span>访问次数 </li>
+      <li> <span class="bignum">000</span>建站天数 </li>
+    </div>
+    <div class="subblock">
+      <script src=__INDEX__/js/thea2.js></script>
+    </div>
+    <!--  随即文章 -->
+    <div class="subblock">
+      <script src=__INDEX__/js/thea3.js></script>
+    </div>
+    <!-- 热门文章 -->
+    <div class="subblock">
+      <script src=__INDEX__/js/thea4.js></script>
+    </div>
+    <div class="subblock">
+      <h3>标签</h3>
+      <ul class="tag_cloud">
+        {volist name="articleRes" id="article"}
+        <a href=""  target="_blank" title="9个话题" class="tag-link-9" >{$article.keywords}</a>  
+        {/volist}
+      </ul>
+    </div>
+    <div class="subblock linkcat">
+      <h3>友情链接</h3>
+      <ul>
+       
+        {volist name="linkres" id="linkres"}
+          <li><a href="{$linkres.url}" target="_blank">{$linkres.title}</a></li>
+        {/volist}
+        <li><a href=""> 友情链接位招租 </a></li>
+      </ul>
+    </div>
+    <ul class="widgets">
+    </ul>
+  </div>
+</div>

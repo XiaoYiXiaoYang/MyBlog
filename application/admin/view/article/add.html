@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html><head>
+ <meta charset="utf-8"> 
+ <title>萧逸小杨后台</title>
+
+ <meta name="description" content="Dashboard">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <!--Basic Styles-->
+ <link href="__ADMIN__/style/bootstrap.css" rel="stylesheet">
+ <link href="__ADMIN__/style/font-awesome.css" rel="stylesheet">
+ <link href="__ADMIN__/style/weather-icons.css" rel="stylesheet">
+
+ <!--Beyond styles-->
+ <link id="beyond-link" href="__ADMIN__/style/beyond.css" rel="stylesheet" type="text/css">
+ <link href="__ADMIN__/style/demo.css" rel="stylesheet">
+ <link href="__ADMIN__/style/typicons.css" rel="stylesheet">
+ <link href="__ADMIN__/style/animate.css" rel="stylesheet">
+
+
+ <!--引入样式文件-->
+<link rel="stylesheet" href="__ADMIN__/markdown/css/editormd.css" />
+<!--引入js文件-->
+<script type="text/javascript" src="__ADMIN__/markdown/examples/js/jquery.min.js"></script>
+<script type="text/javascript" src="__ADMIN__/markdown/editormd.js"></script>
+<script type="text/javascript" src="__ADMIN__/markdown/editormd.amd.js"></script>
+
+</head>
+<body>
+	<!-- 头部 -->
+  <!--引入top-->
+  {include file="common/top" /}
+  <!-- /头部 -->
+  
+  <div class="main-container container-fluid">
+    <div class="page-container">
+      <!-- Page Sidebar -->
+      <!--引入left-->
+      {include file="common/left" /}       
+      <!-- /Page Sidebar -->
+      <!-- Page Content -->
+      <div class="page-content">
+        <!-- Page Breadcrumb -->
+        <div class="page-breadcrumbs">
+          <ul class="breadcrumb">
+            <li>
+              <a href="{:url('index/index')}">系统</a>
+            </li>
+            <li>
+              <a href="{:url('articlelist')}">文章管理</a>
+            </li>
+            <li class="active">新增文章</li>
+          </ul>
+        </div>
+        <!-- /Page Breadcrumb -->
+
+        <!-- Page Body -->
+        <div class="page-body">
+
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+              <div class="widget">
+                <div class="widget-header bordered-bottom bordered-blue">
+                  <span class="widget-caption">新增文章</span>
+                </div>
+                <div class="widget-body">
+                  <div class="weight-main">
+                    <div class="tabbable">
+                      <ul class="nav nav-tabs tabs-flat" id="myTable1">
+                        <li class="active">
+                          <a data-toggle="tab" href="#home11">
+                            基本信息
+                          </a>
+                        </li>
+                        <li class="">
+                          <a data-toggle="tab" href="#profile11">
+                            编辑内容
+                          </a>
+                        </li>
+                      </ul>
+
+                      <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        <div class="tab-content tabs-flat">
+                          <div id="home11" class="tab-pane active">
+                            <div id="horizontal-form">
+                              <div class="form-group">
+                                <label for="cata_name" class="col-sm-2 control-label no-padding-right">文章标题</label>
+                                <div class="col-sm-6">
+                                  <input class="form-control" id="title" placeholder="" name="title" required="" type="text">
+                                </div>
+                                <p class="help-block col-sm-4 red">* 必填</p>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="cata_name" class="col-sm-2 control-label no-padding-right">文章作者</label>
+                                <div class="col-sm-6">
+                                  <input class="form-control" id="author" placeholder="" name="author" required="" type="text">
+                                </div>
+                                <p class="help-block col-sm-4 red">* 必填</p>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label no-padding-right">关键词</label>
+                                <div class="col-sm-6">
+                                  <input class="form-control" id="keywords" placeholder="" name="keywords"  type="text" required="">
+                                </div>
+                                <p class="help-block col-sm-4 red">* 必填</p>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label no-padding-right">所属栏目</label>
+                                <div class="col-sm-6">
+                                   <div class="radio" style="float: left; padding-right:10px;">
+                                    <label>
+                                    <input name="cate_id" type="radio" class="colored-blue" value="1" checked="checked" /> 
+                                        <span class="text"> 技术分享 </span>
+                                    </label> 
+                                  </div>
+
+                                   <div class="radio" style="float: left; padding-right:10px;">
+                                    <label>
+                                    <input name="cate_id" type="radio" class="colored-blue" value="2" /> 
+                                        <span class="text"> 学习笔记 </span>
+                                    </label> 
+                                  </div>
+
+                                   <div class="radio" style="float: left; padding-right:10px;">
+                                    <label>
+                                    <input name="cate_id" type="radio" class="colored-blue" value="3" /> 
+                                        <span class="text"> 生活趣事 </span>
+                                    </label> 
+                                  </div>
+
+                                  <div class="radio" style="float: left; padding-right:10px;">
+                                    <label>
+                                    <input name="cate_id" type="radio" class="colored-blue" value="4" /> 
+                                        <span class="text"> 其它 </span>
+                                    </label> 
+                                  </div>
+                                  
+                                  <!-- <select>
+                                      <option value ="1">技术分享</option>
+                                      <option value ="2">学习笔记</option>
+                                      <option value="3">生活趣事</option>
+                                      <option value="4">其他</option>
+                                    </select> -->
+
+
+                                  </div>
+                                  <p class="help-block col-sm-4 red">* 必填</p>
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="username" class="col-sm-2 control-label no-padding-right">描述</label>
+                                  <div class="col-sm-6">
+                                    <textarea  class="form-control" name="description"> </textarea>
+                                  </div>
+                                  <p class="help-block col-sm-4 red">* 必填</p>
+                                </div>   
+
+                                <div class="form-group">
+                                  <label for="username" class="col-sm-2 control-label no-padding-right">缩略图</label>
+                                  <div class="col-sm-6">
+                                    <input name="pic" id="pic" type="file">
+                                  </div>
+                                  <p class="help-block col-sm-4 red">* 必填</p>
+                                </div>
+
+                              </div>
+                            </div>
+
+                            <div id="profile11" class="tab-pane">
+
+                             <div id="editormd">
+                              <textarea style="display:none;" name="content" ></textarea>
+                            </div>
+
+                            <script type="text/javascript">
+                      
+                             var editor;
+                             $(function() {
+                               editor = editormd("editormd", {
+                                 path: '__ADMIN__/markdown/lib/',
+                                 height:900,
+                                 width:"100%",
+                                 placeholder:'本编辑器支持Markdown编辑，左边编写，右边预览',  //默认显示的文字，这里就不解释了
+                                // theme: "dark",//工具栏主题
+                                 //previewTheme: "dark",//预览主题
+                                 //editorTheme: "pastel-on-dark",//编辑主题
+                                 //saveHTMLToTextarea: true,
+                                 emoji: false,
+                                 taskList: true, 
+                                 tocm: true,         // Using [TOCM]
+                                 tex: true,                   // 开启科学公式TeX语言支持，默认关闭
+                                 flowChart: true,             // 开启流程图支持，默认关闭
+                                 sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
+                                 toolbarIcons : function() {  //自定义工具栏，后面有详细介绍
+                                   return editormd.toolbarModes['simple']; // full, simple, mini
+                                  },
+
+                               });
+                             });
+                           </script>
+
+                         </div>
+                       </div>
+                       <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /Page Body -->
+    </div>
+    <!-- /Page Content -->
+  </div>	
+</div>
+
+<!--Basic Scripts-->
+<script src="__ADMIN__/style/jquery_002.js"></script>
+<script src="__ADMIN__/style/bootstrap.js"></script>
+<script src="__ADMIN__/style/jquery.js"></script>
+<!--Beyond Scripts-->
+<script src="__ADMIN__/style/beyond.js"></script>
+
+
+
+</body></html>

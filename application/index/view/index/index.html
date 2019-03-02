@@ -1,0 +1,87 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="keywords" content="" />
+  <meta name="description" content=" " />
+  <title>萧逸小杨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="__INDEX__/img/yteng.jpg" />
+  <link rel="stylesheet" type="text/css" media="all" href="__INDEX__/css/style.css" />
+  <link rel="stylesheet" type="text/css"  href="__INDEX__/css/font-awesome.min.css"/>
+  <script type="text/javascript" src="__INDEX__/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__INDEX__/js/responsiveslides.min.js"></script>
+  <script type="text/javascript" src="__INDEX__/js/yycm.js"></script>
+
+</head>
+<body>
+
+  <!--引入首页-->
+  {include file="common/header" /}
+
+  <div class="wrap">
+    <div class="main">
+      <div class="screen">
+        <div class="slide_container">
+          <ul class="rslides" id="slider">
+            <li> <a href="https://github.com/XiaoYiXiaoYang" target="_blank" title="GitHub源码下载"><img src="__INDEX__/images/bigpic01.jpg"></a> </li>
+            <li> <a href="https://github.com/XiaoYiXiaoYang" target="_blank" title="GitHub源码下载"><img src="__INDEX__/images/bigpic02.jpg"></a> </li>
+            <li> <a href="https://github.com/XiaoYiXiaoYang" target="_blank" title="GitHub源码下载"><img src="__INDEX__/images/bigpic03.jpg"></a> </li>
+            <li> <a href="https://github.com/XiaoYiXiaoYang" target="_blank" title="GitHub源码下载"><img src="__INDEX__/images/bigpic04.jpg"></a> </li>
+          </ul>
+        </div>
+      </div>
+      {volist name="articleRes" id="article"}
+      
+      <div class="block">
+        <h2><span class="category"> 
+          <a href="" rel="category tag" >{$article.catename}</a> 
+          <i class="fa fa-caret-right"></i></span>
+          <a href="{:url('Article/lists',array('id'=>$article['article_id']))}"> {$article.title} </a></h2>
+        <div class="clear"></div>
+          <div class="viewimg">
+          <a href="" title="{$article.title}" target="_ablank" class="ipic"> 
+          <img src="__UPLOADS__/{$article.pic}" alt="{$article.title}" class="thumbnail" /> 
+          <span class="shine">&nbsp;</span></a>
+         </div>
+        <div class="preview" >  {$article.description}</div>
+
+        <div class="preem"> 
+          <span><i class="fa fa-clock-o"></i> {$article.publish_date} </span>
+          
+          <span><i class="fa fa-eye"></i> {$article.read_times} </span>
+          <span><i class="fa fa-thumbs-o-up"></i> <a href="/ejml/ml1/2014-11-06/147.html#comments" class="ds-thread-count" data-thread-key="147">{$article.like_nums}</a> </span>
+          <span> <i class="fa fa-tags"></i><a href='/e/tags/?tagname=%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8' target='_blank' rel='tag'>{$article.keywords}</a> / <a href='/e/tags/?tagname=%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6' target='_blank' rel='tag'>静态文件</a></span>
+          <span class="more"><a href="{:url('Article/lists',array('id'=>$article['article_id']))}" target='_blank' title="{$article.title}">阅读全文</a></span> </div>
+      </div>
+      {/volist}
+    
+
+    分页问题
+      <!-- <div class='pagination'>&nbsp;<span class='current'>1</span>&nbsp;<a href="/index_2.html">2</a>&nbsp;<a href="/index_3.html">3</a>&nbsp;<a href="/index_4.html">4</a>&nbsp;<a href="/index_5.html">5</a><a href="/index_2.html">下一页</a><a href="/index_11.html">尾页</a>
+      </div> -->
+    </div>
+
+    <!-- 引入右边栏 -->
+    {include file="common/info" /}
+  </div>
+  <div class="clear"></div>
+
+
+  <!--引入尾页-->
+  {include file="common/footer" /}
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ecms064"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+</body>
+</html>
